@@ -50,15 +50,13 @@ func (head *Head) ApplyRotation(rotationM string) {
 	// a := strings.Split(s[0], ",")
 	g := strings.Split(s[1], ",")
 
-	// fmt.Println("a:", a, "g:", g)
+	// fmt.Println("g:", g)
 
 	r := &math32.Vector3{
 		X: parseStringtoFloat(g[2]),
 		Y: parseStringtoFloat(g[1]),
 		Z: parseStringtoFloat(g[0]),
 	}
-
-	// v := head.rotation.Add(r)
 
 	displayHeadRotation(*head, *r)
 	head.rotation = *r
@@ -70,7 +68,7 @@ func parseStringtoFloat(v string) float32 {
 	if e != nil {
 		fmt.Println(e)
 	}
-	// fmt.Println(v, a)
+
 	return float32(a)
 }
 
